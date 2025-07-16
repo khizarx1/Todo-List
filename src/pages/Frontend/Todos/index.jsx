@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { LoadingOutlined } from '@ant-design/icons';
 import { Spin } from 'antd'
 import { toast } from 'react-toastify'
+import '../../../config/global'
 
 import { firestore } from '../../../config/firebase';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore/lite';
@@ -48,7 +49,7 @@ function index() {
 
         const formData = { title, location, description };
 
-        formData.dataCreated = serverTimestamp();
+        formData.dateCreated = serverTimestamp();
         formData.id = window.getRandomId();
         formData.status = 'active'
         formData.createdBy = {

@@ -5,7 +5,7 @@ import { auth } from '../config/firebase'
 
 export const AuthContext = createContext();
 
-const initialState = { isAuthenticated: false };
+const initialState = { isAuthenticated: false, user: null };
 
 const reducer = (state, action) => {
     // console.log('state', state);
@@ -31,7 +31,7 @@ export default function AuthContextProvider(props) {
                 // https://firebase.google.com/docs/reference/js/auth.user
                 // console.log(user)
                 console.log('User is signed in')
-                dispatch({type: 'LOGIN', payload: {user}})
+                dispatch({ type: 'LOGIN', payload: { user } })
                 // ...
             } else {
                 console.log('User is signed out')

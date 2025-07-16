@@ -57,7 +57,7 @@ function Register() {
             });
             toast.success('Registered successfully')
             setIsProccessing(false);
-            dispatch({type: 'LOGIN'})
+            dispatch({ type: 'LOGIN', payload: { user } })
         }
         catch (error) {
             console.error(error)
