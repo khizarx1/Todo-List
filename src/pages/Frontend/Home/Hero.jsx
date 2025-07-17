@@ -55,7 +55,7 @@ function Hero() {
     }
 
     useEffect(() => {
-        if (user) {
+        if (user?.uid) {
             fetchDocuments();
         }
     }, [user])
